@@ -1,0 +1,175 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.package{
+   width:94%;
+
+}
+.package h1{
+   font-size:50px
+}
+.About{
+   width:100%;
+   height:auto;
+   background-color:#fff;
+   margin-top: 4em;
+
+}
+.About .Left{
+   padding:2% 0;
+   float:Left;
+   width:50%;
+   display:inline-block;
+}
+.About .Right{
+   width:50%;
+   display:inline-block;
+}
+.About .Right img{
+   width:80%;
+   height: 600px;
+   object-fit: contain;
+   filter: drop-shadow(0px 2px 2px black);
+}
+.About .Left h1{
+   text-align:center;
+   
+   margin:0 0 10px 0;
+}
+.About .Left hr{
+   width:40%;
+   border-top:4px solid var(--primary);
+   border-bottom:none;
+}
+.About .Left p{
+   font-size:1rem;
+   margin-left: 3.2em;
+   /* margin-right: 2.1em; */
+   width:80%
+}
+
+.mission{
+   width:100%;
+   height:auto;
+   background-color:#fff;
+   margin-left: 2.1em;
+   margin-right: 2.1em;
+}
+.mission .Right{
+   padding:2% 0;
+   width:50%;
+
+   display:inline-block;
+}
+.mission .Left{
+   float:Left;
+   width:50%;
+
+   display:inline-block;
+}
+.mission .Left img{
+   width:80%;
+   object-fit: contain;
+   filter: drop-shadow(0px 2px 2px black);
+}
+.mission .Right h1{
+   text-align:center;
+   margin:0 0 20px 0;
+}
+.mission .Right hr{
+   width:40%;
+   border-top:4px solid var(--primary);
+   border-bottom:none;
+}
+.mission .Right p{
+   font-size:1rem;
+   margin:40px auto;
+   width:80%
+}
+
+.card .circle-package{
+   position:relative;
+   background-color:#579f79;
+   width:250px;
+   height:250px;
+   border:none;
+   border-radius:50%;
+   margin:auto;
+   color:#fff;
+}
+.circle-package h1{
+   position:absolute;
+   top:50%;
+   Left:50%;
+   transform:translate(-50%,-50%);
+   margin:0;
+   font-size:60px;
+}
+
+
+.clear{
+    clear: both;			
+}
+
+
+
+
+
+
+/* media */
+@media(max-width:1200px){
+   .mission .Right p{
+      font-size:.8rem;
+      margin:20px auto;
+   }
+   .About .Left p{
+      font-size:.8rem;
+      margin:20px auto;
+   }
+   .About .Right img{
+    display: none;
+   }
+   .mission .Left img{
+    display: none;
+   }
+   .package{
+    margin: auto;
+}
+}
+
+
+
+
+
+
+@media(max-width:992px){
+   .About .Left{
+   width:100%; 
+   margin-top: 6em;
+}
+
+.package h1{
+    font-size: 25px;
+}
+   .About .Right{
+   width:100%; 
+}
+      .mission .Left{
+   width:100%; 
+}
+   .mission .Right{
+   width:100%; 
+}
+   .team .card{ 
+   width:40%;
+}   
+}
+
+@media(max-width:768px){
+      .team .card{ 
+   width:100%;
+} 
+   nav{
+      height:80px;
+   }
+}

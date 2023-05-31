@@ -1,0 +1,147 @@
+.footer {
+  color: #333;
+  background-color: #fff;
+  bottom: 0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.row {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.column {
+  width: calc(100% / 3);
+  padding: 0 0.9375rem;
+
+}
+
+.connect {
+  margin-bottom: 0.9375rem;
+  font-size: 1.5rem;
+  position: relative; 
+}
+
+.connect::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 30px;
+  height: 4px;
+  background-color: var(--primary);
+}
+
+.pra {
+  font-size: 18px;
+  line-height: 1.3rem;
+}
+
+.ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ul li {
+  margin-bottom: 0.625rem;
+}
+
+.ul  li a {
+  color: #333;
+  font-size: 18px;
+  text-decoration: underline;
+}
+.linkedin{
+  color: #333;
+  font-size: 18px;
+  text-decoration: underline;
+
+}
+.linkedin:hover{
+  color: #fff;
+}
+
+ul li i {
+  color: var(--primary);
+}
+
+ul li a:hover {
+  color: var(--primary);
+
+}
+
+ul.social-icons {
+  display: flex;
+  width: 250px;
+  column-gap: 0.625rem;
+}
+
+.social-icons i {
+  color: white;
+}
+
+ul.social-icons li {
+  margin-bottom: 0rem;
+}
+
+ul.social-icons li a {
+  display: grid;
+  place-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  color: #fff;
+  background-color: var(--primary);
+  border: 2px solid var(--primary)
+}
+
+ul.social-icons li:hover a {
+  background-color: #fff;
+  color: var(--primary);
+}
+
+.copyright {
+  text-align: center;
+  color: #fff;
+  background-color: var(--primary);
+  padding: 0.2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Responsive adjustments */
+
+@media screen and (max-width: 768px) {
+  .column {
+    margin: 0.4rem 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .connect {
+    font-size: 1.3125rem;
+  }
+
+  .pra {
+    font-size: 0.9375rem;
+  }
+
+  .ul li a {
+    font-size: 0.9375rem;
+  }
+
+  ul.social-icons li a {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+}

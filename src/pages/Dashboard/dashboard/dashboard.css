@@ -1,0 +1,110 @@
+.card_dash {
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    margin-bottom: 30px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+   
+    margin: 20px 0;
+    transition: all 0.5s ease;
+    color: var(--secondary);
+    min-width: 200px;
+    max-width: 200x;
+    height: 80px;
+  }
+  .all-card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .card_dash:first-child {
+    border-left: 5px solid var(--secondary);
+  }
+  .card_dash:nth-child(2) {
+    border-left: 5px solid var(--primary);
+  }
+  .card_dash:nth-child(3) {
+    border-left: 5px solid var(--accent);
+  }
+  .card_dash:nth-child(4) {
+    border-left: 5px solid #3e9fae;
+  }
+  .icon-shape {
+    border-radius: 50%;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;
+  }
+  .icon-area {
+    background: var(--secondary);
+  }
+  .icon-pie {
+    background: var(--primary);
+  }
+  .icon-user {
+    background: var(--accent);
+  }
+  .icon-percent {
+    background: #3e9fae;
+  }
+  .card_dash:hover {
+    box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07),
+      1px 6px 12px rgba(39, 44, 49, 0.04);
+    transform: translate3D(0, -1px, 0) scale(1.02);
+    transition: all 0.5s ease;
+  }
+  .icon-shape:hover {
+    box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07),
+      1px 6px 12px rgba(39, 44, 49, 0.04);
+    transform: translate3D(0, -1px, 0) scale(1.1);
+ cursor: pointer;
+    transition: all 0.5s ease;
+    gap: 1;
+  }
+  .card_charts {
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    width: 49%;
+    height:500px ;
+    color: var(--secondary);
+    text-align: center;
+  }
+  .card_charts:hover {
+    box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07),
+      1px 6px 12px rgba(39, 44, 49, 0.04);
+  }
+  .chart{
+    height: 400px;
+  }
+  .recharts-surface{
+   margin: auto;
+   width: 80%;
+   max-width: 80%;
+   max-height: 80%;
+  }
+  .charts-dash{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin:3.5pc auto;
+ }
+ .card-title{
+  font-size:18px;
+  margin-bottom: 0;
+ }
+ @media only screen and (max-width: 768px) {
+  .charts-dash{display: none;}
+  .all-card {justify-content: center;}
+
+}

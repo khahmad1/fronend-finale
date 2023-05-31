@@ -1,0 +1,42 @@
+.category{
+/* width: 94%; */
+margin: auto;
+display: flex;
+flex-wrap: wrap;
+margin-top: 2em;
+padding: 0 40px;
+    gap: 10px;
+
+}
+.title {
+   /* margin-left: 4em; */
+   margin-bottom: 2em;
+   width: 94%;
+   margin: 0 auto;
+   margin-top: 1em;
+   position: relative;
+   color: black ;
+ }
+ 
+ .title::before {
+   content: "";
+   position: absolute;
+   bottom: -4px;
+   left: 0;
+   width: 30px;
+   height: 4px;
+   background-color: var(--primary);
+ }
+ .is-filter{
+  color: #fff;
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: "0.2s ease-out",
+ }
+ @media (max-width: 1150px) {
+   .title {
+     margin-left: 18px;
+     
+   }
+ }
+ 

@@ -1,0 +1,40 @@
+.signIn{
+    /* margin: auto; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    /* margin-top: 1em; */
+    
+    
+    }
+    .signIn-img {
+    width: 50%;
+    margin-top: 10em;
+    translate: rotate(45deg);
+    }
+    
+    .signIn-form{
+        justify-self: flex-end;
+        margin-top: 6em;
+    }
+    .signIn a{
+    text-decoration: none;
+    }
+    .signIn a:hover{
+    cursor: pointer;
+    }
+    
+    @media only screen and (max-width: 1330px) {
+     
+        .signIn-img {
+         display:none;
+         
+        }
+        .signup_form {
+          
+          margin-top: 30px;
+        }
+      }
+      

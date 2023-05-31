@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+.medicine{
+  /* margin:0 auto; */
+  display: flex;
+  width: 94%;
+  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4em;
+}
+.card {
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  height: 360px;
+  overflow: hidden;
+  width: 300px;
+  box-sizing: border-box;
+  margin-bottom: 10em;
+}
+
+.card > figure {
+  width: 75%;
+  margin: auto;
+}
+
+.card > figure > img {
+ width: 100%
+
+}
+
+.details {
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  padding-top:0 ;
+  position: absolute;
+  top: 78%;
+  width: 300px;
+  transition: box-shadow 0.3s ease-in-out, top 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.card:hover .details {
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  top: 10%;
+}
+
+.details > .min-details {
+  display: flex;
+  justify-content: space-around;
+}
+.cart-name{
+  padding-left: 5px;
+  border-left: 4px solid var(--primary)  ;
+}
+
+.details > .min-details > h1 > span {
+  color: var(--primary);
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.btn {
+  background-color: #192a56;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  width: 100%;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+}
+
+.pagination .page-link {
+  font-size: 1.2rem; /* Adjust the font size as needed */
+  padding: 0.5em 0.75em; /* Adjust the padding as needed */
+}
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: var(--primary) !important;
+  color: #fff;
+}
+.css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
+  color: var(--primary);
+  font-size: 2em !important;
+}
+@media (max-width: 768px) {
+  .medicine {
+    width: 100%;
+    justify-content: center;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+  
+  }
+}
