@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .package{
-   width:94%;
+   width:100%;
+display: flex;
+justify-content: center;
+flex-direction: column;
 
 }
 .package h1{
@@ -30,6 +33,7 @@
    height: 600px;
    object-fit: contain;
    filter: drop-shadow(0px 2px 2px black);
+   margin-left: 8em;
 }
 .About .Left h1{
    text-align:center;
@@ -44,7 +48,6 @@
 .About .Left p{
    font-size:1rem;
    margin-left: 3.2em;
-   /* margin-right: 2.1em; */
    width:80%
 }
 
@@ -52,13 +55,10 @@
    width:100%;
    height:auto;
    background-color:#fff;
-   margin-left: 2.1em;
-   margin-right: 2.1em;
 }
 .mission .Right{
    padding:2% 0;
    width:50%;
-
    display:inline-block;
 }
 .mission .Left{
@@ -83,39 +83,9 @@
 }
 .mission .Right p{
    font-size:1rem;
-   margin:0;
+   margin-left: 8em;
    width:80%
 }
-
-.card .circle-package{
-   position:relative;
-   background-color:#579f79;
-   width:250px;
-   height:250px;
-   border:none;
-   border-radius:50%;
-   margin:auto;
-   color:#fff;
-}
-.circle-package h1{
-   position:absolute;
-   top:50%;
-   Left:50%;
-   transform:translate(-50%,-50%);
-   margin:0;
-   font-size:60px;
-}
-
-
-.clear{
-    clear: both;			
-}
-
-
-
-
-
-
 /* media */
 @media(max-width:1200px){
    .mission .Right p{
