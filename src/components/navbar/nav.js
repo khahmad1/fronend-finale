@@ -11,8 +11,8 @@ import cartContext from "../context/cardContext";
 import { useEffect } from "react";
 import userContext from "../context/userContext";
 import Button from "@mui/material/Button";
-import { BiLogIn } from 'react-icons/bi';
-import logo from "./brand(1).svg"
+import { BiLogIn } from "react-icons/bi";
+import logo from "./brand(1).svg";
 
 function Navbar() {
   const { token } = useContext(userContext);
@@ -51,13 +51,11 @@ function Navbar() {
       }`}
     >
       <ul className="start">
-        <li>
-          <Link to="/" className="logo">
-            <div className="logo-svg" viewBox="0 0 200 60">
-              <img src={logo} alt="logo" width={""} height={120} />
-            </div>
-          </Link>
-        </li>
+        <div>
+          <div viewBox="0 0 200 60">
+            <img src={logo} alt="logo" width={""} height={120} />
+          </div>
+        </div>
       </ul>
 
       <ul className="end">
@@ -65,7 +63,9 @@ function Navbar() {
           className={`home ${activeLink === "" ? "is-active" : ""}`}
           onClick={() => setActiveLink("")}
         >
-          <Link className="nav-link" to="/">Home</Link>
+          <Link className="nav-link" to="/">
+            Home
+          </Link>
           <Link className="nav-link" to="/">
             <Home />
           </Link>
@@ -74,14 +74,21 @@ function Navbar() {
           className={`about ${activeLink === "about" ? "is-active" : ""}`}
           onClick={() => setActiveLink("about")}
         >
-          <Link className="nav-link" to="/about">About</Link>
+          <Link className="nav-link" to="/about">
+            About
+          </Link>
           <Link className="nav-link" to="/about">
             <InfoIcon />
           </Link>
         </li>
 
-        <li className="contact">
-          <Link className="nav-link" to="/contact">Contact us</Link>
+        <li
+          className={`contact ${activeLink === "contact" ? "is-active" : ""}`}
+          onClick={() => setActiveLink("contact")}
+        >
+          <Link className="nav-link" to="/contact">
+            Contact us
+          </Link>
           <Link className="nav-link">
             <ContactPhoneIcon />
           </Link>
@@ -211,6 +218,7 @@ function Navbar() {
           className={`menu-toggle ${isMobileNav ? "is-active" : ""}`}
           onClick={toggleMobileNav}
         >
+          <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>

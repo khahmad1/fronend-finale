@@ -40,18 +40,9 @@
   nav svg.search {
     opacity: 0.6;
   }
-  
-  .start li:first-child {
-    margin-right: 16px;
+  .start{
+    margin-left: 2.1em;
   }
-  .start li:last-child {
-    display: flex;
-  }
-  .start li:last-child svg {
-    width: 80px;
-    height: 24px;
-  }
-  
   .center-navbar {
     max-width: 728px;
     flex: 1;
@@ -111,17 +102,36 @@
   .end .avatar {
     margin: 0 6px;
   }
-  .nav-link:hover,
-  .sidebar-link.is-active {
+  .about:hover {
     transform: scale(1.1);
     transition: 0.2s ease-out;
     font-weight: 700;
-    border-bottom: 2px solid  var(--primary);
+    border-bottom: 3px solid  var(--primary);
+
+  } 
+  .home:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-out;
+    font-weight: 700;
+    border-bottom: 3px solid  var(--primary);
+  } 
+  .contact:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-out;
+    font-weight: 700;
+    border-bottom: 3px solid  var(--primary);
+
+  } 
+  .is-active {
+    transform: scale(1.1);
+    transition: 0.2s ease-out;
+    font-weight: 700;
+    border-bottom: 3px solid  var(--primary);
   } 
   .nav-link {
     position: relative;
   }
-  .nav-link::before {
+  /* .is-active::before {
     content:   "";
     position: absolute;
     bottom: 0;
@@ -131,7 +141,7 @@
     background-color:var(--primary);
     z-index: 999;
     transition: .2s
-  }
+  } */
   .nav-link:hover::before {
     width: 100%;
   }
@@ -176,6 +186,12 @@ border-bottom: 2px solid #fff;
     display: none;
   }
   @media (max-width: 894px) {
+    .start{
+      margin-left: 0;
+    }
+    .end{
+      margin-right: 0;
+    }
     nav li a:nth-child(2) {
       display: block;
     }
@@ -197,6 +213,7 @@ border-bottom: 2px solid #fff;
     .bar {
       display: block !important;
       cursor: pointer;
+      margin-right: 1.9em;
     }
     .end {
       min-width: 100px;
@@ -290,25 +307,23 @@ border-bottom: 2px solid #fff;
   
     
     .mobile-nav {
-        background-color: white;
-        position: absolute;
-        padding: 0;
-        right: 0;
-        z-index: 100;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        width: 90%;
-        height: auto;
-        overflow: hidden;
-        transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform property */
-      }
-  
+      background-color: white;
+      position: absolute;
+      padding: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 90%;
+      height: auto;
+      overflow: hidden;
+    }
     .mobile-nav li a:nth-child(1) {
       display: flex;
       flex-direction: column;
-      height: 50px;
+      height: 30px;
     }
     .mobile-nav .end {
       display: flex;
