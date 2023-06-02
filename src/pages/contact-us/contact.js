@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
+import {TextField} from "@mui/material";
 import "./contact.css";
 import { Button } from "@mui/material";
 import axios from "axios";
@@ -117,21 +117,21 @@ export default function Contact() {
             className="icon"
             style={{ fontSize: 35, color: "#FFFFFF" }}
           />
-          <span>123 Main Street, City, Country</span>
+          <span>123 Main Street, Beirut,Lebanon</span>
         </div>
         <div className="icons">
           <EmailIcon
             className="icon"
             style={{ fontSize: 35, color: "#FFFFFF" }}
           />
-          <span>example@example.com</span>
+          <span>facility@gmail.com</span>
         </div>
         <div className="icons">
           <PhoneIcon
             className="icon"
             style={{ fontSize: 35, color: "#FFFFFF" }}
           />
-          <span>+1234567890</span>
+          <span>+96181325449</span>
         </div>
       </article>
       <ToastContainer />

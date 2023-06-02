@@ -44,8 +44,6 @@ function MedicineCard(props) {
         }
         setMedicine(response.data.response);
         setLoading(false);
-        console.log(response.data);
-        console.log(props.categoryId);
       } catch (error) {
         console.error("Error fetching medicine data:", error);
         setLoading(false);

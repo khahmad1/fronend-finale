@@ -160,5 +160,10 @@
   .truck .cockpit .right__light {
     bottom: 6px;
   }
+  @media only screen and (max-width: 768px) {
+    .road{
+      width: 350px;
+    }
+  }
   
   

@@ -89,7 +89,7 @@ function Navbar() {
           <Link className="nav-link" to="/contact">
             Contact us
           </Link>
-          <Link className="nav-link">
+          <Link  to="/contact"className="nav-link">
             <ContactPhoneIcon />
           </Link>
         </li>
@@ -218,7 +218,6 @@ function Navbar() {
           className={`menu-toggle ${isMobileNav ? "is-active" : ""}`}
           onClick={toggleMobileNav}
         >
-          <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
