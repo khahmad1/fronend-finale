@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import DeleteComponent from "../delete";
 import EditOrder from "./editOrder";
-
+import "../tabel.css"
 
 
 const CustomGridToolbar = () => {
@@ -125,7 +125,6 @@ const DataGridDemo = () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_URL}order`);
         setRows(response.data.response);
-        console.log(response.data.response);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching order data:', error);

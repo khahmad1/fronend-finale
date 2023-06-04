@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 import Loader from "../../../components/loader/loader";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import "../tabel.css"
 import AddMedicine from "./addMedicine";
 import DeleteComponent from "../delete";
 import EditMedicine from "./editMedicine";

@@ -36,7 +36,9 @@ function EditOrder(props) {
           status,
         }
       );
-      const updatedResponse = await axios.get(`${process.env.REACT_APP_URL}order`);
+      const updatedResponse = await axios.get(
+        `${process.env.REACT_APP_URL}order`
+      );
       props.setRows(updatedResponse.data.response);
       toast.success("Order edited successfully!");
     } catch (err) {
@@ -50,13 +52,13 @@ function EditOrder(props) {
       <Sheet>
         <Button
           sx={{
-            backgroundColor: "var(--primary)",
             fontSize: "12px",
-            color: "#fff",
+            color: "var(--primary)",
             "&:hover": {
-              color: "var(--primary)",
+              color: "#fff",
               cursor: "pointer",
               transform: "scale(1)",
+              backgroundColor: "var(--primary)",
               transition: "0.2s ease-out",
             },
           }}
@@ -71,14 +73,15 @@ function EditOrder(props) {
         </DialogTitle>
         <DialogContent>
           <form>
-            <FormControl fullWidth sx={{marginTop: "1rem"  }}>
-              <InputLabel id="status-label">Status</InputLabel>
+            <FormControl variant="outlined"  sx={{ minWidth: 200,marginTop: "1rem"  }}>
+              <InputLabel id="category-select-label">Status</InputLabel>
               <Select
                 labelId="status-label"
-                id="status"
+                id="category-select"
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
-                sx={{ width: "100%"  }}
+                sx={{ width: "100%" }}
+                label="Status"
               >
                 <MenuItem value="pending">Pending</MenuItem>
                 <MenuItem value="in progress">In Progress</MenuItem>

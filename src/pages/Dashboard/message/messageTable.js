@@ -6,7 +6,7 @@ import axios from "axios";
 import { Typography } from "@mui/material";
 import DeleteComponent from "../delete";
 import Loader from "../../../components/loader/loader";
-
+import "../tabel.css"
 
 const CustomGridToolbar = () => (
   <GridToolbar

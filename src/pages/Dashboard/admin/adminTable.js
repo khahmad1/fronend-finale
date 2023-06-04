@@ -10,7 +10,7 @@ import axios from "axios";
 import AddAdmin from "./addAdmin";
 import DeleteComponent from "../delete";
 import Loader from "../../../components/loader/loader";
-
+import "../tabel.css"
 
 
 const CustomGridToolbar = () => {

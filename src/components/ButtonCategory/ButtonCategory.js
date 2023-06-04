@@ -57,7 +57,7 @@ export default function ButtonCategory(props) {
     <div>
       <h1 className="title">Our Products</h1>
       <section className="category">
-        <FormControl variant="outlined" sx={{ minWidth: 200 }}>
+        <FormControl variant="outlined"sx={{ minWidth: 250,}} >
           <InputLabel id="category-select-label">Select a category</InputLabel>
           <Select
             labelId="category-select-label"

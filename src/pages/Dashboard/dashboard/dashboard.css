@@ -102,9 +102,19 @@
  .card-title{
   font-size:18px;
   margin-bottom: 0;
+  padding-right: 8px;
+  padding-bottom: 8px;
  }
  @media only screen and (max-width: 768px) {
-  .charts-dash{display: none;}
+  .charts-dash{
+    flex-direction: column;
+justify-content: center;
+  }
+  .card_charts{
+    width: 94%;
+    justify-content: center;
+  margin: 8px;
+  }
   .all-card {justify-content: center;}
 
 }

@@ -11,7 +11,7 @@ import axios from 'axios';
 import DeleteComponent from '../delete';
 import EditCategory from './editCategory';
 import Loader from '../../../components/loader/loader';
-
+import "../tabel.css"
 
 
 

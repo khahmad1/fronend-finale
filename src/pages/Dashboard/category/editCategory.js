@@ -48,17 +48,18 @@ function EditCategory(props) {
     <section className="addForm">
       <Sheet>
       <Button
-      sx={{
+     sx={{
+          
+      fontSize: "12px",
+      color: "var(--primary)",
+      "&:hover": {
+        color: "#fff",
+        cursor: "pointer",
+        transform: "scale(1)",
         backgroundColor: "var(--primary)",
-        fontSize: "12px",
-        color:"#fff",
-        "&:hover": {
-          color:"var(--primary)",
-          cursor: "pointer",
-          transform: "scale(1)",
-          transition: "0.2s ease-out",
-        },
-      }}
+        transition: "0.2s ease-out",
+      },
+    }}
       onClick={handleClickOpen}
     >
       <BorderColorIcon /> Edit 

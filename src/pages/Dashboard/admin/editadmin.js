@@ -58,13 +58,14 @@ function EditAdmin(props) {
       <Sheet>
         <Button
           sx={{
-            backgroundColor: "var(--primary)",
+          
             fontSize: "12px",
-            color: "#fff",
+            color: "var(--primary)",
             "&:hover": {
-              color: "var(--primary)",
+              color: "#fff",
               cursor: "pointer",
               transform: "scale(1)",
+              backgroundColor: "var(--primary)",
               transition: "0.2s ease-out",
             },
           }}

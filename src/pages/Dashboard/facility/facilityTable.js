@@ -10,6 +10,7 @@ import axios from "axios";
 import DeleteComponent from "../delete";
 import EditFacility from "./editFacility";
 import AddFacility from "./addFacility";
+import "../tabel.css"
 
 const CustomGridToolbar = () => {
   return (
