@@ -15,6 +15,7 @@ import Cookies from "js-cookie";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import img from "../heroSection/Hero2.png";
+import Loader from "../loader/loader";
 function Copyright(props) {
   return (
     <Typography
@@ -37,24 +38,26 @@ export default function LoginAdmin() {
   const { addTokenAdmin } = useContext(adminContext);
   const [password, setPassword] = useState();
   const [username, setUsername] = useState();
+  const [loading, setLoading] = useState(false); // Loading state
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading state to true
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_URL}admin/login`,
         { password, username }
       );
-      // Save token using addTokenAdmin function
       addTokenAdmin(response.data.token);
-      // Save token in a cookie
       Cookies.set("token", response.data.token, { expires: 7 });
       toast.success("LogIn successful");
       navigate("/dashboard/dashboard");
     } catch (error) {
       console.log("Error:", error);
       toast.error("Error SignIn, Please Try Again");
+    } finally {
+      setLoading(false); // Set loading state back to false
     }
   };
 
@@ -132,7 +135,7 @@ export default function LoginAdmin() {
                     },
                   }}
                 >
-                  Sign In
+                  {loading ? <Loader /> : "Sign In"} 
                 </Button>
               </Box>
             </Box>

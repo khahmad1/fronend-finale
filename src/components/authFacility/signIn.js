@@ -19,6 +19,7 @@ import userContext from "../context/userContext";
 import { ToastContainer, toast } from "react-toastify";
 import { useState, useContext } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
+import Loader from "../loader/loader"
 
 const theme = createTheme();
 
@@ -28,11 +29,14 @@ export default function SignIn() {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [loading, setLoading] = useState(false); // Loading state
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
   const navigate = useNavigate();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading state to true
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_URL}facility/login`,
@@ -59,6 +63,8 @@ export default function SignIn() {
     } catch (error) {
       console.log(error);
       toast.error("Error SignIn, Please Try Again ");
+    } finally {
+      setLoading(false); // Set loading state back to false
     }
   };
 
@@ -141,7 +147,11 @@ export default function SignIn() {
                     },
                   }}
                 >
-                  Sign In
+                  {loading ? (
+                    <Loader /> // Render the loader component when loading is true
+                  ) : (
+                    "Sign In"
+                  )}
                 </Button>
                 <Grid container>
                   <Grid item>

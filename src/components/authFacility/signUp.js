@@ -17,6 +17,8 @@ import userContext from "../context/userContext";
 import { ToastContainer, toast } from "react-toastify";
 import { useState, useContext } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
+import Loader from "../loader/loader";
+
 const theme = createTheme();
 
 export default function SignUp() {
@@ -29,11 +31,14 @@ export default function SignUp() {
   const [username, setUsername] = useState("");
   const [phone, setPhone] = useState();
   const [address, setAddress] = useState("");
+  const [loading, setLoading] = useState(false); // Loading state
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading state to true
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_URL}facility/signUp`,
@@ -62,6 +67,8 @@ export default function SignUp() {
     } catch (error) {
       console.log(error);
       toast.error("Error SignUp, Please Try Again ");
+    } finally {
+      setLoading(false); // Set loading state back to false
     }
   };
 
@@ -79,13 +86,11 @@ export default function SignUp() {
               noValidate
               onSubmit={handleSubmit}
               sx={{
-                
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-               
-                marginBottom:2,
+                marginBottom: 2,
                 float: "right",
               }}
             >
@@ -189,7 +194,12 @@ export default function SignUp() {
                     },
                   }}
                 >
-                  Sign Up
+                  {loading ? (
+                   <Loader/>
+                   // Render the loader component when loading is true
+                  ) : (
+                    "Sign Up"
+                  )}
                 </Button>
                 <Grid container>
                   <Grid item>
