@@ -94,6 +94,13 @@
   background-color: var(--primary) !important;
   color: #fff;
 }
+.css-1xr9krm.Mui-selected {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+}
+.css-nhb8h9 {
+  
+}
 .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
   color: var(--primary);
   font-size: 2em !important;
@@ -106,7 +113,11 @@
   .pagination {
     display: flex;
     justify-content: center;
+
     margin-bottom: 1em;
   
+  }
+  .css-nhb8h9 {
+  justify-content: center;
   }
 }

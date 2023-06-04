@@ -31,6 +31,10 @@
 .css-1rtnrqa {
   color: white !important;
 }
+.css-1xr9krm.Mui-selected {
+  background-color: var(--primary);
+  color: #fff;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
