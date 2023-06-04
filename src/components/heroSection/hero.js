@@ -62,6 +62,7 @@ function HeroSectionHome() {
                 height: "45px",
                 color: "#fff",
                 border: "1px solid var(--primary)",
+                float:"left",
                 "&:hover": {
                   color: "var(--primary)",
                   background: "transparont",
