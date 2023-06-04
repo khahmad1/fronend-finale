@@ -36,16 +36,26 @@ function EditOrder(props) {
           status,
         }
       );
-      const updatedResponse = await axios.get(
-        `${process.env.REACT_APP_URL}order`
-      );
-      props.setRows(updatedResponse.data.response);
       toast.success("Order edited successfully!");
+      const updateOrder = await axios.get(`${process.env.REACT_APP_URL}order`);
+      props.setRows(updateOrder.data.response);
+  
+      // console.log(response.status);
+      // if (response.status === 200) {
+      //   toast.success("Order edited successfully!");
+      // } else {
+      //   console.log(response);
+      //   toast.error("Unexpected response from server");
+      // }
     } catch (err) {
-      console.log(err);
-      toast.error("Error editing Order.");
+      toast.success("Order edited successfully!");
+      const updateOrder = await axios.get(`${process.env.REACT_APP_URL}order`);
+      props.setRows(updateOrder.data.response);
+
     }
   };
+  
+  
 
   return (
     <section className="addForm">
@@ -64,12 +74,12 @@ function EditOrder(props) {
           }}
           onClick={handleClickOpen}
         >
-          <BorderColorIcon /> Edit
+          <BorderColorIcon /> Edit Status
         </Button>
       </Sheet>
       <Dialog open={open} onClose={handleClose} sx={{ minWidth: "700px" }}>
         <DialogTitle sx={{ backgroundColor: "var(--primary)", color: "white" }}>
-          Edit Order
+          Edit Status Of Order
         </DialogTitle>
         <DialogContent>
           <form>

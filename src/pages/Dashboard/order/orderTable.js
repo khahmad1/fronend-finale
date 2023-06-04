@@ -77,7 +77,7 @@ const DataGridDemo = () => {
     },
     {
       field: "edit",
-    headerName: "Edit",
+    headerName: "Edit Status",
     width: 130,
     renderCell: (params) => (
       <EditOrder id={params.row._id}

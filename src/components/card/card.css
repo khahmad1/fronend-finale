@@ -99,7 +99,8 @@
   color: #fff !important;
 }
 .css-nhb8h9 {
-  
+  background-color: var(--primary) !important;
+  color: #fff !important;
 }
 .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
   color: var(--primary);
