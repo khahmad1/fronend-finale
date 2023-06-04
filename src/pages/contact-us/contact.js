@@ -34,10 +34,10 @@ export default function Contact() {
   return (
     <main className="container">
       <h1 className="title">Get In Touch</h1>
-      <div className="form">
+      <div className="touch">
         <section className="inputs-form">
           <article className="inputs">
-            <span>Contact Us</span>
+            <span className="us">Contact Us</span>
 
             <TextField
               margin="normal"
