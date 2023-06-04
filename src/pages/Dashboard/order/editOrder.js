@@ -77,7 +77,7 @@ function EditOrder(props) {
           <BorderColorIcon /> Edit Status
         </Button>
       </Sheet>
-      <Dialog open={open} onClose={handleClose} sx={{ minWidth: "700px" }}>
+      <Dialog open={open} onClose={handleClose} sx={{ minWidth: "300px" }}>
         <DialogTitle sx={{ backgroundColor: "var(--primary)", color: "white" }}>
           Edit Status Of Order
         </DialogTitle>
