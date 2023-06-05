@@ -46,7 +46,7 @@ flex-direction: column;
    border-bottom:none;
 }
 .About .Left p{
-   font-size:1rem;
+   font-size:1.1rem;
    margin-left: 3.2em;
    width:80%
 }
@@ -82,7 +82,7 @@ flex-direction: column;
    border-bottom:none;
 }
 .mission .Right p{
-   font-size:1rem;
+   font-size:1.1rem;
    margin-left: 8em;
    width:80%
 }

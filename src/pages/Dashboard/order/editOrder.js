@@ -48,10 +48,8 @@ function EditOrder(props) {
       //   toast.error("Unexpected response from server");
       // }
     } catch (err) {
-      toast.success("Order edited successfully!");
-      const updateOrder = await axios.get(`${process.env.REACT_APP_URL}order`);
-      props.setRows(updateOrder.data.response);
-
+      toast.error("Error editing Order");
+      console.log(err)
     }
   };
   

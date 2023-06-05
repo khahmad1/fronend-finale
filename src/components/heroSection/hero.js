@@ -12,13 +12,12 @@ const images = [img1, img2, img3];
 
 function HeroSectionHome() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [animateText, setAnimateText] = useState(true); 
+  const [animateText, setAnimateText] = useState(true);
 
   useEffect(() => {
- 
     setTimeout(() => {
       setAnimateText(false);
-    }, 1000); 
+    }, 1000);
 
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -41,17 +40,15 @@ function HeroSectionHome() {
     <>
       <section className="home_hero_body">
         <div className="left">
-            <h3 className={`hero-title ${animateText ? "animated-text" : ""}`}>
-              The Medical Supply Management System
-            </h3>
-            <p className="description">
-
-              Together, we can empower healthcare providers and ensure 
-              <br />
-               a seamless flow of essential medication supplies to those who need
-              <br />
-              them the most.
-            </p>
+          <h3 className={`hero-title ${animateText ? "animated-text" : ""}`}>
+          Med Bridge: Empowering Medical Management<br/> with Seamless Efficiency
+          </h3>
+          <p className="description">
+          Medical Bridge is empowering the Medical management and he is<br/>
+            dedicated to revolutionizing The way healthcare services are<br/>
+            delivered across the nation It is the bridge between the facilities<br/>
+            and the companies of medicine.
+          </p>
           <Link className="learn" to="/about">
             <Button
               sx={{
@@ -62,7 +59,7 @@ function HeroSectionHome() {
                 height: "45px",
                 color: "#fff",
                 border: "1px solid var(--primary)",
-                float:"left",
+                float: "left",
                 "&:hover": {
                   color: "var(--primary)",
                   background: "transparont",

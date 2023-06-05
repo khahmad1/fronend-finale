@@ -3,7 +3,7 @@ import { Bar } from "react-chartjs-2";
 function LineCharts() {
   return (
     <div className="card_charts">
-      <h2>Number Of Facility By Month </h2>
+      <h2>Number Of Facility Per Month </h2>
       <div style={{ maxWidth: "750px" }}>
         <Bar
           data={{

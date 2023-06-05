@@ -7,7 +7,7 @@ import CommentIcon from "@mui/icons-material/Comment";
 import CategoryIcon from "@mui/icons-material/Category";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
 import WorkIcon from "@mui/icons-material/Work";
-import logo from "./brand(2).svg";
+import logo from "./logo.png";
 import axios from "axios";
 import LogoutIcon from "@mui/icons-material/Logout";
 

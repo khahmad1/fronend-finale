@@ -13,11 +13,13 @@ function AboutPage() {
             <h1>About us</h1>
             <hr />
             <p>
-              Our Medical Supply Management System for Lebanon is dedicated to
-              revolutionizing the way healthcare services are delivered across
-              the nation. With a singular focus on ensuring every hospital and
-              clinic has uninterrupted access to vital medical supplies, we
-              strive to elevate the quality of care provided to patients.
+              Medical Bridge is empowering the Medical management and he is
+              dedicated to revolutionizing The way healthcare services are
+              delivered across the nation It is the bridge between the
+              facilities and the companies of medicine.. With a singular focus
+              on ensuring every hospital and clinic has uninterrupted access to
+              vital medical supplies, we strive to elevate the quality of care
+              provided to patients.
             </p>
             <p>
               Our vision is to establish a comprehensive and efficient system
