@@ -65,7 +65,7 @@ const Profile = (props) => {
             <div className="user-bio">
               <div className="user-rating">
                 <h3 className="rating">{numberOfOrders}</h3>
-                <div className="appoin">requested order</div>
+                <div className="appoin">Requested Order</div>
               </div>
               <div className="profile-btn">
                 <Link to="/order">
@@ -76,7 +76,7 @@ const Profile = (props) => {
               </div>
               <div className="profile-btn">
                
-                  <button className="bookBtn" id="bookBtn" onClick={handleLogout}>
+                  <button style={{height:40}}className="bookBtn" id="bookBtn" onClick={handleLogout}>
                   <LogoutIcon />  
                   </button>
                

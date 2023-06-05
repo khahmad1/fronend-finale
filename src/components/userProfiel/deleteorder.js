@@ -94,15 +94,6 @@ function DeleteOrder(props) {
       
       </Dialog>
       </section>
-      <ToastContainer
-            position="top-right"
-            autoClose={3000} // Duration to display each notification in milliseconds (e.g., 3000 = 3 seconds)
-            newestOnTop={false}
-            closeOnClick
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
     </div>
   );
 }

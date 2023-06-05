@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import userContext from "../context/userContext";
-import { List, ListItem} from "@mui/material";
+import { List, ListItem } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -33,10 +33,9 @@ function Footer() {
         <div className="column">
           <h4 className="connect">About Us</h4>
           <p className="pra">
-          Our Medical Supply Management System for Lebanon is dedicated to
-              revolutionizing the way healthcare services are delivered across
-              the nation. With a singular focus on ensuring every hospital and
-              clinic .
+            Our Medical Bridge is dedicated to revolutionizing the way
+            healthcare services are delivered across the nation. With a singular
+            focus on ensuring every hospital and clinic .
           </p>
         </div>
 
@@ -44,10 +43,17 @@ function Footer() {
           <h4 className="connect">Quick Links</h4>
           <ul className="ul">
             <li>
-              <Link to="/signIn">
-                <i className="fa fa-angle-right"></i> Sign In
-              </Link>
+              {token ? (
+                <Link to="/profile">
+                  <i className="fa fa-angle-right"></i> Profile
+                </Link>
+              ) : (
+                <Link to="/signIn">
+                  <i className="fa fa-angle-right"></i> Sign In
+                </Link>
+              )}
             </li>
+
             <li>
               <Link to="/order">
                 <i className="fa fa-angle-right"></i> Order
@@ -58,13 +64,6 @@ function Footer() {
                 <i className="fa fa-angle-right"></i> Contact us
               </Link>
             </li>
-            {token && (
-              <li>
-                <Link to="/profile">
-                  <i className="fa fa-angle-right"></i> Profile
-                </Link>
-              </li>
-            )}
           </ul>
         </div>
 
@@ -94,8 +93,8 @@ function Footer() {
           </List>
         </div>
       </section>
-<section className="copyright">
-      <p>© 2023 All Rights Reserved</p>
+      <section className="copyright">
+        <p>© 2023 All Rights Reserved</p>
       </section>
     </footer>
   );

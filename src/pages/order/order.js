@@ -18,6 +18,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { TextField } from "@mui/material"; // Import the TextField component from Material-UI
+import { useNavigate } from "react-router-dom";
 
 function Order() {
   const { user } = useContext(userContext);
@@ -49,7 +50,7 @@ function Order() {
   const [message, setMessage] = useState("");
   const [date, setDate] = useState("");
   const [address, setAddress] = useState("");
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -61,7 +62,8 @@ function Order() {
         date,
         address,
       });
-      toast.success("Order successful");
+      toast.success("Ordered");
+      navigate("/profile");
     } catch (error) {
       console.log(error);
       toast.error("Error get order, Please Try Again ");
@@ -87,157 +89,157 @@ function Order() {
   if (items.length > 0) {
     return (
       <main className="background">
-      <div className="global-container">
-        <header className="principal">
-          <h1 className="title">Order</h1>
-        </header>
-        <main className="principal">
-          <div className="cart-preview">
-            {items.map((item) => {
-              return (
-                <div key={item._id} className="cart-item">
-                  <img
-                    src={`${process.env.REACT_APP_URL}${item.image}`}
-                    alt="product"
-                  />
-                  <div>
+        <div className="global-container">
+          <header className="principal">
+            <h1 className="title">Order</h1>
+          </header>
+          <main className="principal">
+            <div className="cart-preview">
+              {items.map((item) => {
+                return (
+                  <div key={item._id} className="cart-item">
+                    <img
+                      src={`${process.env.REACT_APP_URL}${item.image}`}
+                      alt="product"
+                    />
                     <div>
-                      <div className="name">{item.name}</div>
-                      <div className="price">
-                        <span className="discounted">{item.price}</span>
+                      <div>
+                        <div className="name">{item.name}</div>
+                        <div className="price">
+                          <span className="discounted">{item.price}</span>
+                        </div>
+                      </div>
+                      <div className="qty-selector">
+                        <span className="material-icons">
+                          <Remove
+                            onClick={() =>
+                              updateQuantity(item._id, item.quantity - 1)
+                            }
+                          />
+                        </span>
+                        <span className="qty">{item.quantity}</span>
+                        <span className="material-icons">
+                          <Add onClick={() => handleAdd(item._id)} />
+                        </span>
                       </div>
                     </div>
-                    <div className="qty-selector">
-                      <span className="material-icons">
-                        <Remove
-                          onClick={() =>
-                            updateQuantity(item._id, item.quantity - 1)
-                          }
-                        />
-                      </span>
-                      <span className="qty">{item.quantity}</span>
-                      <span className="material-icons">
-                        <Add onClick={() => handleAdd(item._id)} />
-                      </span>
-                    </div>
+                  </div>
+                );
+              })}
+              <div className="shipping">
+                <span>Shipping</span>
+                <span>20$</span>
+              </div>
+              <div className="total_price">
+                <span>Total</span>
+                <span>{total_price}$</span>
+              </div>
+            </div>
+            <form onSubmit={handleSubmit} id="checkout-form">
+              <section>
+                <h3>Contact information</h3>
+                <div className="form-group">
+                  <label htmlFor="email">E-mail</label>
+                  <div>
+                    <span className="material-icons">
+                      <Email />
+                    </span>
+                    <TextField
+                      fullWidth
+                      type="email"
+                      id="email"
+                      placeholder="Enter your email..."
+                      value={user.email}
+                      required
+                    />
                   </div>
                 </div>
-              );
-            })}
-            <div className="shipping">
-              <span>Shipping</span>
-              <span>20$</span>
-            </div>
-            <div className="total_price">
-              <span>Total</span>
-              <span>{total_price}$</span>
-            </div>
-          </div>
-          <form onSubmit={handleSubmit} id="checkout-form">
-            <section>
-              <h3>Contact information</h3>
-              <div className="form-group">
-                <label htmlFor="email">E-mail</label>
-                <div>
-                  <span className="material-icons">
-                    <Email />
-                  </span>
-                  <TextField
-                  fullWidth
-                    type="email"
-                    id="email"
-                    placeholder="Enter your email..."
-                    value={user.email}
-                    required
-                  />
+                <div className="form-group">
+                  <label htmlFor="phone">Phone number</label>
+                  <div>
+                    <span className="material-icons">
+                      <Phone />
+                    </span>
+                    <TextField
+                      fullWidth
+                      type="tel"
+                      id="phone"
+                      placeholder="Enter your phone number..."
+                      value={user.phone}
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="phone">Phone number</label>
-                <div>
-                  <span className="material-icons">
-                    <Phone />
-                  </span>
-                  <TextField
-                  fullWidth
-                    type="tel"
-                    id="phone"
-                    placeholder="Enter your phone number..."
-                    value={user.phone}
-                    required
-                  />
+                <div className="form-group">
+                  <label htmlFor="full-name">Facility name</label>
+                  <div>
+                    <span className="material-icons">
+                      <Person />
+                    </span>
+                    <TextField
+                      fullWidth
+                      type="text"
+                      id="full-name"
+                      placeholder="Enter your full name..."
+                      value={user.name}
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="full-name">Facility name</label>
-                <div>
-                  <span className="material-icons">
-                    <Person />
-                  </span>
-                  <TextField
-                  fullWidth
-                    type="text"
-                    id="full-name"
-                    placeholder="Enter your full name..."
-                    value={user.name}
-                    required
-                  />
+                <div className="form-group">
+                  <label htmlFor="address">Address</label>
+                  <div>
+                    <span className="material-icons">
+                      <Home />
+                    </span>
+                    <TextField
+                      fullWidth
+                      type="text"
+                      id="address"
+                      placeholder="Enter your address..."
+                      onChange={(e) => setAddress(e.target.value)}
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="address">Address</label>
-                <div>
-                  <span className="material-icons">
-                    <Home />
-                  </span>
-                  <TextField
-                  fullWidth
-                    type="text"
-                    id="address"
-                    placeholder="Enter your address..."
-                    onChange={(e) => setAddress(e.target.value)}
-                    required
-                  />
+                <div className="form-group">
+                  <label htmlFor="address">Message</label>
+                  <div>
+                    <span className="material-icons">
+                      <Message />
+                    </span>
+                    <TextField
+                      fullWidth
+                      type="text"
+                      id="address"
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Enter your Message..."
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="address">Message</label>
-                <div>
-                  <span className="material-icons">
-                    <Message />
-                  </span>
-                  <TextField
-                  fullWidth
-                    type="text"
-                    id="address"
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Enter your Message..."
-                    required
-                  />
+                <div className="form-group">
+                  <label htmlFor="address">Date</label>
+                  <div>
+                    <span className="material-icons">
+                      <DateRange />
+                    </span>
+                    <TextField
+                      fullWidth
+                      type="date"
+                      id="address"
+                      onChange={(e) => setDate(e.target.value)}
+                      placeholder="Enter your The Date..."
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="address">Date</label>
-                <div>
-                  <span className="material-icons">
-                    <DateRange />
-                  </span>
-                  <TextField
-                  fullWidth
-                    type="date"
-                    id="address"
-                    onChange={(e) => setDate(e.target.value)}
-                    placeholder="Enter your The Date..."
-                    required
-                  />
-                </div>
-              </div>
-            </section>
-            <button type="submit">Place order</button>
-          </form>
-        </main>
-        <ToastContainer />
-      </div>
+              </section>
+              <button type="submit">Place order</button>
+            </form>
+          </main>
+          <ToastContainer />
+        </div>
       </main>
     );
   } else if (items.length === 0 || items.length < 0) {

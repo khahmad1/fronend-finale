@@ -75,7 +75,7 @@ function Navbar() {
           onClick={() => setActiveLink("about")}
         >
           <Link className="nav-link" to="/about">
-            About
+            About Us
           </Link>
           <Link className="nav-link" to="/about">
             <InfoIcon />

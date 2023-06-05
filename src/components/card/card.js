@@ -3,18 +3,23 @@ import "./card.css";
 import { Button } from "@mui/material";
 import axios from "axios";
 import CartContext from "../context/cardContext";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "../loader/loader";
 import { Pagination } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import UserContext from "../context/userContext";
 
 function MedicineCard(props) {
   const [medicine, setMedicine] = useState([]);
-  const { addToCart } = useContext(CartContext); // Use useContext to consume the CartContext
+  const { addToCart } = useContext(CartContext);
   const [cart, setCart] = useState({});
-  const [loading, setLoading] = useState(true); // State variable to track loading state
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+  const navigate = useNavigate();
+
+  const { token } = useContext(UserContext); // Access the token from the UserContext
 
   const handleAddToCart = (_id, quantity) => {
     setCart((prevCart) => ({
@@ -32,7 +37,7 @@ function MedicineCard(props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true)
+      setLoading(true);
       try {
         let response;
         if (props.categoryId === null) {
@@ -59,12 +64,30 @@ function MedicineCard(props) {
 
   const totalPages = Math.ceil(medicine.length / itemsPerPage);
 
+  const handleAddToCartClick = (item) => {
+    if (!token) {
+      // If the token doesn't exist, redirect to the sign-in page
+      navigate("/signIn");
+    } else {
+      addToCart(
+        item._id,
+        item.name,
+        item.price,
+        item.image,
+        item.quantity,
+        cart[item._id]
+      );
+      handleAddToCart(item._id);
+    }
+  };
+
   return (
     <div>
-     <h1 className="title" style={{ fontSize: "1.4em" }}>{props.title}</h1>
+      <h1 className="title" style={{ fontSize: "1.4em" }}>
+        {props.title}
+      </h1>
 
       <main className="medicine">
-
         {loading ? (
           <Loader />
         ) : (
@@ -107,17 +130,7 @@ function MedicineCard(props) {
                       transition: "0.2s ease-out",
                     },
                   }}
-                  onClick={() => {
-                    addToCart(
-                      item._id,
-                      item.name,
-                      item.price,
-                      item.image,
-                      item.quantity,
-                      cart[item._id]
-                    );
-                    handleAddToCart(item._id);
-                  }}
+                  onClick={() => handleAddToCartClick(item)}
                 >
                   Add to Cart
                 </Button>
@@ -126,12 +139,12 @@ function MedicineCard(props) {
           ))
         )}
       </main>
-      <div className="pagination" >
-      <Pagination
-        count={totalPages}
-        page={currentPage}
-        onChange={handlePageChange}
-      />
+      <div className="pagination">
+        <Pagination
+          count={totalPages}
+          page={currentPage}
+          onChange={handlePageChange}
+        />
       </div>
     </div>
   );
