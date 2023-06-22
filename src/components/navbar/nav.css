@@ -41,7 +41,7 @@
     opacity: 0.6;
   }
   .start{
-    margin-left: 1em;
+    margin-left: 3em;
     margin-bottom: 25px;
   }
   .center-navbar {
@@ -204,7 +204,7 @@ border-bottom: 2px solid #fff;
       width: 100%;
     }
   }
-  @media (max-width: 427px) {
+  @media (max-width: 470px) {
     nav li a:nth-child(2) {
       display: none ;
     }
