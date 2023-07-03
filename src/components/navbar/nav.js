@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import userContext from "../context/userContext";
 import Button from "@mui/material/Button";
 import { BiLogIn } from "react-icons/bi";
-import logo from "./LOGO KHARMA1.png";
+import logo from "./logo.png";
 
 function Navbar() {
   const { token } = useContext(userContext);
@@ -53,7 +53,7 @@ function Navbar() {
       <ul className="start">
         <div>
           <div viewBox="0 0 200 60">
-            <img src={logo} alt="logo" width={200} height={70} />
+            <img src={logo} alt="logo" width={160} height={155} />
           </div>
         </div>
       </ul>
